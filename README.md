@@ -1,11 +1,11 @@
-Лабораторная работа №1. Создание Activity и передача параметров между ними.
-Выполнил: Золотарев Даниил
-Язык программирования: Java
+# Лабораторная работа №1. Создание Activity и передача параметров между ними.
+- Выполнил: Золотарев
+- Язык программирования: Java
 
-Что делает приложение?
+## Что делает приложение?
 Этот проект демонстрирует простой пример перехода между двумя экранами (Activity) в Android-приложении. Чтобы запустить проект можно прочитать "Как запустить"
 
-Функциональность:
+## Функциональность:
 Приложение содержит две Activity:
 ![image](https://github.com/user-attachments/assets/ab5ab25b-786f-47b9-91c6-312d87d6618e)
 
@@ -15,22 +15,24 @@ MainActivity: На этом экране находится кнопка "Пер
 
 SecondActivity: На этом экране отображается текст "Переданный параметр: Золотарев", где Золотарев* - это строка, переданная из MainActivity.
 
-Дополнительные сведения:
+## Дополнительные сведения:
 Проект использует стандартные компоненты Android: Activity, Intent, Button, TextView.
 Переход между Activity осуществляется с помощью Intent - объекта, который содержит информацию о том, какую Activity нужно запустить.
 Параметр передается с помощью putExtra("Фамилия", "Золотарев"), а затем извлекается в SecondActivity с помощью getIntent().getStringExtra("Фамилия").
 
-Как запустить:
-Импортируйте проект:
-Загрузите или клонируйте этот репозиторий.
-Откройте проект в Android Studio.
-Запустите приложение:
+## Как запустить:
+- Импортируйте проект:
+- Загрузите или клонируйте этот репозиторий.
+- Откройте проект в Android Studio.
+- Запустите приложение:
 Нажмите кнопку "Run" в Android Studio.
 Выберите эмулятор или устройство для запуска приложения.
 Нажмите кнопку:
 На экране MainActivity нажмите кнопку "Перейти к Activity 2".
 Вы перейдете на экран SecondActivity, где увидите фамилию Золотарев, переданную из MainActivity.
-Код:
+
+## Код:
+````
 MainActivity.java:
 import android.content.Intent;
 import android.os.Bundle;
@@ -61,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+````
+````
 SecondActivity.java:
 import android.os.Bundle;
 import android.widget.TextView;
@@ -84,6 +88,8 @@ public class SecondActivity extends AppCompatActivity {
 
 
 }
+````
+````
 activity_main.xml:
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -102,6 +108,8 @@ activity_main.xml:
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+````
+````
 activity_second.xml:
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -119,4 +127,5 @@ activity_second.xml:
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>}
+````
